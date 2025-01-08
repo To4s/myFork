@@ -6,6 +6,18 @@
 #include "can.h"
 
 /*
+ *  Speed 12M (included for 250Kbps and 500Kbps only for now)
+ */
+#define MCP_12MHz_500kBPS_CFG1 (0x40)
+#define MCP_12MHz_500kBPS_CFG2 (0xD9)
+#define MCP_12MHz_500kBPS_CFG3 (0x84)
+
+#define MCP_12MHz_250kBPS_CFG1 (0x41)
+#define MCP_12MHz_250kBPS_CFG2 (0xD9)
+#define MCP_12MHz_250kBPS_CFG3 (0x84)
+
+
+/*
  *  Speed 8M
  */
 #define MCP_8MHz_1000kBPS_CFG1 (0x00)
@@ -173,6 +185,7 @@
 enum CAN_CLOCK {
     MCP_20MHZ,
     MCP_16MHZ,
+    MCP_12MHz,
     MCP_8MHZ
 };
 

@@ -307,6 +307,23 @@ MCP2515::ERROR MCP2515::setBitrate(const CAN_SPEED canSpeed, CAN_CLOCK canClock)
     set = 1;
     switch (canClock)
     {
+        
+        case (MCP_12MHz):
+        switch (canSpeed)
+        {
+            case (CAN_250KBPS):
+            cfg1 = MCP_12MHz_250kBPS_CFG1;                                  //   250KBPS
+            cfg2 = MCP_12MHz_250kBPS_CFG2;
+            cfg3 = MCP_12MHz_250kBPS_CFG3;
+            break;
+
+            case (CAN_500KBPS):                                             //   500KBPS
+            cfg1 = MCP_12MHz_500kBPS_CFG1;
+            cfg2 = MCP_12MHz_500kBPS_CFG2;
+            cfg3 = MCP_12MHz_500kBPS_CFG3;
+            break;
+        }
+
         case (MCP_8MHZ):
         switch (canSpeed)
         {
